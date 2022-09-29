@@ -65,16 +65,13 @@ def get_task(request):
         form = TaskForm(request.POST)
         title = request.POST.get('title')
         description = request.POST.get('description')
+        user = request.user
+        date = datetime.datetime.now()
 
         # check whether it's valid:
         if form.is_valid():
-            task = Task()
             # process the data in form.cleaned_data as required
-            task.user = request.user
-            task.date = datetime.datetime.now()
-            task.title = form.cleaned_data['title']
-            task.description = form.cleaned_data['description']
-            task.save()
+            Task.objects.create(title=title, description=description, date=date, user=user)
             # redirect to a new URL:
             response = HttpResponseRedirect(reverse("todolist:show_todolist"))
             return response
