@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Tugas 4 Assignment PBP/PBD</h1>
+
+  <h5>Name: </h5>
+  <b>{{nama}}</b>
+
+  <h5>Student ID: </h5>
+  <b>{{student_id}}</b>
+
+  <h5>Username: </h5>
+  <b>{{user}}</b>
+
+  <table>
+    <tr>
+      <th>Date Created</th>
+      <th>Task Title</th>
+      <th>Task Description</th>
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for data in todolist %}
+        <tr>
+            <th>{{data.date}}</th>
+            <th>{{data.title}}</th>
+            <th>{{data.description}}</th>
+        </tr>
+    {% endfor %}
+  </table>
+
+  <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+  <button><a href="{% url 'todolist:get_task' %}">Add Task</a></button>
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+ {% endblock content %}

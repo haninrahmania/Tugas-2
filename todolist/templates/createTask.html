@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Add Task</title>
+{% endblock meta %}
+
+{% block content %}
+
+<div class = "get_task">
+
+    <h1>Add Task</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Task Title: </td>
+                <td><input type="text" name="title" placeholder="Title" class="form-control"></td>
+            </tr>
+                    
+            <tr>
+                <td>Task Description: </td>
+                <td><input type="description" name="description" placeholder="Description" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn get_task_btn" type="submit" value="Add Task"></td>
+            </tr>
+        </table>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+
+</div>
+
+{% endblock content %}
