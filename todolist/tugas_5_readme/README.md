@@ -1,6 +1,6 @@
 Link herokuapp: https://tugas2pbphanin.herokuapp.com/todolist/login/
 
-{% comment %}
+<!--
 1. - Inline CSS adalah cara penulisan styling CSS yang dilakukan langsung dalam tag elemen yang bersangkutan. Hal ini membuat stylingnya spesifik pada satu elemen dan tidak dependen dengan styling lainnya.
 
 - Internal CSS adalah cara penulisan CSS yang berada di file yang sama pada file HTML. Styling CSS tersebut unik untuk file HTML itu saja. Internal CSS ditulis menggunakan tag <style> .selector {styling properties} </style>.
@@ -53,4 +53,4 @@ p span{
    - Memastikan keempat halaman responsif
    - Melakukan push dan deploy ke github dan heroku
 
-{% endcomment %}
+-->
