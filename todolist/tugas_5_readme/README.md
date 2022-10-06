@@ -1,3 +1,7 @@
+Link Readme Tugas 5(versi rapih):
+https://docs.google.com/document/d/13QVoB48v4LcjNGkenoPpD2rlrFHRCjQS-sCs9iRp9dM/edit?usp=sharing
+
+Link herokuapp: https://tugas2pbphanin.herokuapp.com/todolist/login/
 
 1. - Inline CSS adalah cara penulisan styling CSS yang dilakukan langsung dalam tag elemen yang bersangkutan. Hal ini membuat stylingnya spesifik pada satu elemen dan tidak dependen dengan styling lainnya.
 
@@ -50,3 +54,6 @@ p span{
    - Membuat cards dan mengkustomisasinya sesuai design halaman (referensi dari internet)
    - Memastikan keempat halaman responsif
    - Melakukan push dan deploy ke github dan heroku
+
+
+
