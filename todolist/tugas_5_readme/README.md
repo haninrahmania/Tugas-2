@@ -1,6 +1,5 @@
 Link herokuapp: https://tugas2pbphanin.herokuapp.com/todolist/login/
 
-<!--
 1. - Inline CSS adalah cara penulisan styling CSS yang dilakukan langsung dalam tag elemen yang bersangkutan. Hal ini membuat stylingnya spesifik pada satu elemen dan tidak dependen dengan styling lainnya.
 
 - Internal CSS adalah cara penulisan CSS yang berada di file yang sama pada file HTML. Styling CSS tersebut unik untuk file HTML itu saja. Internal CSS ditulis menggunakan tag <style> .selector {styling properties} </style>.
@@ -8,13 +7,13 @@ Link herokuapp: https://tugas2pbphanin.herokuapp.com/todolist/login/
 - Eksternal CSS adalah cara penulisan CSS pada satu file yang terpisah dari HTML. Untuk menggunakan CSS tersebut pada file HTML gunakan tag <link rel="stylesheet" href="mystyle.css">. File yang dituliskan dalam href adalah nama file .css yang telah dibuat. Isi dari file CSS eksternal akan mengubah styling untuk semua file .html.
 
 2. Beberapa tag HTML yang umum digunakan adalah :
-<head> : Head berisi metadata yang biasanya menyatakan judul dokumen, character set, styles, scripts, dan informasi meta lainnya
+"<head> : Head berisi metadata yang biasanya menyatakan judul dokumen, character set, styles, scripts, dan informasi meta lainnya
 <body> : Body berisi data yang ingin ditampilkan di website
 <input> : untuk menerima input dari user
 <h1>, <h2>, <h3>, dll : Heading tag dari 1-6 (ukuran 1 adalah paling besar)
 <div> : container (division)
 <p> : untuk text paragraf (paragraph)
-<form> : untuk membuat form 
+<form> : untuk membuat form" 
 
 3. Terdapat 6 tipe selector CSS, yaitu:
 
@@ -53,4 +52,3 @@ p span{
    - Memastikan keempat halaman responsif
    - Melakukan push dan deploy ke github dan heroku
 
--->
