@@ -9,12 +9,12 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import TaskForm
+from .forms import TaskForm 
 
 @login_required(login_url='/todolist/login/')
 # Create your views here.
 def show_todolist(request):
-    data_todolist = Task.objects.all()
+    data_todolist = Task.objects.all().filter(user=request.user)
     context = {
         'todolist': data_todolist,
         'nama': 'Hanin',
@@ -79,3 +79,9 @@ def get_task(request):
     # if a GET (or any other method) we'll create a blank form
         
     return render(request, 'createTask.html', {'form':form})
+
+@login_required(login_url='/todolist/login/')
+def delete_task(request, id):
+    data = Task.objects.get(id=id)
+    data.delete()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))

@@ -5,14 +5,56 @@
 {% endblock meta %}
 
 {% block content %}
+<nav class="navbar navbar-expand-lg" style="background-color:mistyrose">
+    <a class="navbar-brand" href="#" style="font-size: 30px; font-family:monospace;">
+        <a style="font-size: 30px">&#128035</a>
+        <b style="font-style:oblique; font-size: 30px; font-family: monospace;">Todolist
+        </b>
+        <a style="font-size: 30px">&#128035</a>
+    </a>
+    
+  </nav>
 
-<div class = "login">
+<style>
+    body{
+      background-color:#F8EDE3;
+    }
+    table, th{
+        font-family:monospace;
+        text-align: center;
+        border: 3px solid #F8EDE3;
+        border-collapse: collapse;
+        background-color:#F8EDE3;
+      }
+      td{
+        font-family:monospace;
+        text-align: center;
+        border: 3px solid #F8EDE3;
+        border-collapse: collapse;
+      }
+      .button{
+        font-family:monospace;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .greeting{
+      font-family:monospace;
+      color:black;
+      font-size: medium;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      }
+   </style>
 
-    <h1>Login</h1>
+<div class = "greeting">
+
+    <h1 style = "background-color: white;">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
+        <table rules = "all", border = "0", align = "center">
             <tr>
                 <td>Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>

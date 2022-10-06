@@ -1,20 +1,73 @@
 {% extends 'base.html' %}
 
  {% block content %}
+ <nav class="navbar navbar-expand-lg" style="background-color:mistyrose">
+   <a class="navbar-brand" href="#" style="font-size: 30px; font-family:monospace;">
+    <a style="font-size: 30px">&#128035</a>
+    <b style="font-style:oblique; font-size: 30px; font-family: monospace;">Todolist
+    </b>
+    <a style="font-size: 30px">&#128035</a>
+    </a>
+   <a href="{% url 'todolist:get_task' %}" input class="btn btn-secondary" style="margin-left: 10px; font-family: monospace;">Add Task</a>
+   <a href="{% url 'todolist:logout' %}" input class="btn btn-secondary" style="margin-left: 10px; font-family: monospace;">Logout</a>
+  
+ </nav>
 
-  <h1>Tugas 4 Assignment PBP/PBD</h1>
+ <style>
+  body{
+    background-color:#F8EDE3;
+  }
+  table, th{
+      font-family:monospace;
+      text-align: center;
+      border: 3px solid rgb(255, 255, 255);
+      border-collapse: collapse;
+    }
+    td{
+      font-family:monospace;
+      text-align: center;
+      border: 3px solid rgb(255, 255, 255);
+      border-collapse: collapse;
+    }
+    .button{
+      font-family:monospace;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .greeting{
+    font-family:monospace;
+    color:black;
+    font-size: medium;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    }
+    .card-title{
+      font-size: larger;
+    }
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
 
-  <h5>Name: </h5>
-  <b>{{nama}}</b>
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+      .col-1 {width: 25%;}
+    }
+ </style>
 
-  <h5>Student ID: </h5>
-  <b>{{student_id}}</b>
+  <div class = "greeting">
+    <h1 style = "background-color: white;">&#128045{{user}}'s Todolist!&#128045</h1>
+  </div>
 
-  <h5>Username: </h5>
-  <b>{{user}}</b>
-
-  <table>
-    <tr>
+  <table rules = "all", border = "5", align = "center">
+    <tr style = "background-color: bisque;">
       <th>Date Created</th>
       <th>Task Title</th>
       <th>Task Description</th>
@@ -22,16 +75,41 @@
     {% comment %} Add the data below this line {% endcomment %}
     {% for data in todolist %}
         <tr>
-            <th>{{data.date}}</th>
-            <th>{{data.title}}</th>
-            <th>{{data.description}}</th>
+            <td>{{data.date}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.description}}</td>
+            <td><a href="{% url 'todolist:delete_task' data.id %}" input class="btn btn-secondary">Delete</a></td>
         </tr>
     {% endfor %}
   </table>
 
-  <h5>Sesi terakhir login: {{ last_login }}</h5>
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; font-family:monospace; justify-content: center;">
 
-  <button><a href="{% url 'todolist:get_task' %}">Add Task</a></button>
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    {% for card in todolist %}
+    {#  Single Card Template:#}
+    <div class="card" style="width: 15rem; margin: 10px; align-items: center;">
+      <div class="card-body">
+        <div style="display: flex; flex-direction: row">
+          <b class="card-title">{{ card.title }}</b>
+          {#  Colored cirlce:#}
+          <div style="
+            background:mistyrose;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+          "></div>
+        </div>
+        <p class="card-text">{{ card.description }}</p>
+        <p class="card-text">{{ card.date }}</p>
+        <a href="{% url 'todolist:delete_task' card.id %}" input class="btn btn-secondary">Delete</a>
+      </div>
+    </div>
+    {% endfor %}
+  
+  </div>
+
+  <h6 style = "text-align: center; margin-top: 5px; font-family:monospace;">Sesi terakhir login: {{ last_login }}</h6>
+  
 
  {% endblock content %}

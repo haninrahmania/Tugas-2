@@ -6,13 +6,57 @@
 
 {% block content %}
 
+<nav class="navbar navbar-expand-lg" style="background-color:mistyrose">
+    <a class="navbar-brand" href="#" style="font-size: 30px; font-family:monospace;">
+        <a style="font-size: 30px">&#128035</a>
+        <b style="font-style:oblique; font-size: 30px; font-family: monospace;">Todolist
+        </b>
+        <a style="font-size: 30px">&#128035</a>
+        </a>
+    <a href="{% url 'todolist:show_todolist' %}" input class="btn btn-secondary" style="margin-left: 10px; font-family: monospace;">Home</a>
+    <a href="{% url 'todolist:logout' %}" input class="btn btn-secondary" style="margin-left: 10px; font-family: monospace;">Logout</a>
+    
+  </nav>
+ 
+  <style>
+   body{
+     background-color:#F8EDE3;
+   }
+   table, th{
+       font-family:monospace;
+       text-align: center;
+       border: 3px solid #F8EDE3;
+       border-collapse: collapse;
+     }
+     td{
+       font-family:monospace;
+       text-align: center;
+       border: 3px solid #F8EDE3;
+       border-collapse: collapse;
+     }
+     .button{
+       font-family:monospace;
+       text-align: center;
+       margin-top: 10px;
+     }
+     .get_task{
+     font-family:monospace;
+     color:black;
+     font-size: medium;
+     margin: auto;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     }
+  </style>
+
 <div class = "get_task">
 
-    <h1>Add Task</h1>
+    <h1 style = "background-color: white;">Add Task</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
+        <table rules = "all", border = "5", align = "center">
             <tr>
                 <td>Task Title: </td>
                 <td><input type="text" name="title" placeholder="Title" class="form-control"></td>
@@ -25,7 +69,7 @@
 
             <tr>
                 <td></td>
-                <td><input class="btn get_task_btn" type="submit" value="Add Task"></td>
+                <td><input class="btn get_task_btn" type="submit" value="Add Task" style="background-color:lightgreen;"></td>
             </tr>
         </table>
     </form>
